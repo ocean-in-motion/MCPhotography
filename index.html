@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mel Carter Photography — Weddings, Portraits, Headshots &amp; Pets</title>
-<meta name="description" content="Mel Carter Photography — wedding and couples photography, portraits, headshots, and pet photography &amp; film, shot with a warm hand and a sharp eye.">
+<meta name="description" content="Mel Carter Photography — wedding and couples photography, portraits, headshots, and pet photography &amp; film serving Peachtree City, Newnan, Griffin, Fayetteville &amp; Senoia, GA.">
 <meta property="og:title" content="Mel Carter Photography">
-<meta property="og:description" content="Wedding and couples photography, portraits, headshots, and pet photography &amp; film, shot with a warm hand and a sharp eye.">
+<meta property="og:description" content="Wedding and couples photography, portraits, headshots, and pet photography &amp; film — serving Peachtree City, Newnan, Griffin, Fayetteville &amp; Senoia, GA.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/mel-icon-512.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mel Carter Photography">
-<meta name="twitter:description" content="Wedding and couples photography, portraits, headshots, and pet photography &amp; film, shot with a warm hand and a sharp eye.">
+<meta name="twitter:description" content="Wedding and couples photography, portraits, headshots, and pet photography &amp; film — serving Peachtree City, Newnan, Griffin, Fayetteville &amp; Senoia, GA.">
 <meta name="twitter:image" content="images/mel-icon-512.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="images/mel-logo.svg">
@@ -210,6 +210,7 @@
     display:flex; flex-direction:column; transition:background .2s ease, transform .28s cubic-bezier(.2,.7,.2,1);
   }
   .service-card:hover{background:var(--white); transform:translateY(-4px);}
+  .icon-mount{display:inline-block;}
   .service-card .ic{width:26px; height:26px; margin-bottom:22px;}
   .service-card h3{font-size:20px; margin-bottom:10px;}
   .service-card p{color:var(--muted); font-size:14.5px; flex:1;}
@@ -239,7 +240,8 @@
   .footer-bottom .brand-mark{width:16px; height:16px;}
 
   /* ================= SERVICE PAGE TEMPLATE ================= */
-  .service-hero{padding:68px 32px 54px; border-bottom:1px solid var(--line); text-align:center;}
+  .service-hero{padding:68px 32px 54px; border-bottom:1px solid var(--line); text-align:center; position:relative; overflow:hidden;}
+  .vine-field.small{width:140px; height:min(40vw, 260px);}
   .service-hero-inner{max-width:720px; margin:0 auto;}
   .service-hero h1{font-size:clamp(34px,5vw,54px); margin-bottom:18px;}
   .service-hero p.lead{color:var(--muted); font-size:17px; max-width:58ch; margin:0 auto;}
@@ -315,9 +317,10 @@
   .icon-frame .cbl{bottom:-1px; left:-1px; border-bottom-width:1.5px; border-left-width:1.5px;}
   .icon-frame .cbr{bottom:-1px; right:-1px; border-bottom-width:1.5px; border-right-width:1.5px;}
   .icon-frame:hover{transform:scale(1.05);}
-  .icon-frame .brand-mark{width:clamp(84px, 11vw, 150px); height:clamp(84px, 11vw, 150px);}
   .film-icon{width:clamp(84px,11vw,150px); height:clamp(84px,11vw,150px);}
   .film-icon .rec-dot{animation:pulseDot 1.8s ease-in-out infinite; transform-box:fill-box; transform-origin:center;}
+  .camera-icon{width:clamp(84px,11vw,150px); height:clamp(84px,11vw,150px);}
+  .camera-icon .rec-dot{animation:pulseDot 1.8s ease-in-out infinite; transform-box:fill-box; transform-origin:center;}
   @keyframes pulseDot{0%,100%{opacity:1; transform:scale(1);} 50%{opacity:0.35; transform:scale(1.7);}}
 
   /* ================= PROCESS ================= */
@@ -417,30 +420,26 @@
   /* ---------- growing vines ---------- */
   .vine-field{
     position:absolute; bottom:0; pointer-events:none; z-index:1; overflow:visible;
-    transform-origin:50% 100%;
   }
   .vine-field svg{width:100%; height:100%; display:block; overflow:visible;}
-  .vine-field.outer{width:180px; height:min(58vw, 440px);}
-  .vine-field.inner{width:150px; height:min(40vw, 320px);}
-  .vine-field.left{left:clamp(-14px, 1vw, 30px); transform:rotate(var(--tilt, 0deg));}
+  .vine-field.outer{width:190px; height:min(58vw, 440px);}
+  .vine-field.inner{width:160px; height:min(40vw, 320px);}
+  .vine-field.left{left:clamp(-14px, 1vw, 30px);}
   .vine-field.left.inner{left:clamp(128px, 11vw, 188px);}
-  .vine-field.right{right:clamp(-14px, 1vw, 30px); transform:scaleX(-1) rotate(var(--tilt, 0deg));}
+  .vine-field.right{right:clamp(-14px, 1vw, 30px); transform:scaleX(-1);}
   .vine-field.right.inner{right:clamp(128px, 11vw, 188px);}
   @media (max-width:1220px){ .vine-field.inner{display:none;} }
   @media (max-width:980px){ .vine-field{display:none;} }
 
   .vine-stem{
-    fill:none; stroke:var(--sage-deep); stroke-width:2.4; stroke-linecap:round;
+    fill:none; stroke:var(--sage-deep); stroke-width:4.4; stroke-linecap:round;
     transition:stroke-dashoffset 2s cubic-bezier(.25,.75,.2,1);
   }
   .vine-shine{
-    fill:none; stroke:#f0d488; stroke-width:2.2; stroke-linecap:round;
-    opacity:0.9; mix-blend-mode:multiply;
-    filter:drop-shadow(0 0 3px rgba(233,190,90,0.65));
+    fill:none; stroke:#f0d488; stroke-width:2.6; stroke-linecap:round;
+    opacity:0.55; mix-blend-mode:multiply;
+    transition:stroke-dashoffset 2s cubic-bezier(.25,.75,.2,1);
   }
-  @keyframes vineShineTravel{ to{ stroke-dashoffset:var(--shine-run, -1800px); } }
-  .vine-field.grow .vine-shine{animation:vineShineTravel 5.5s linear infinite;}
-
   .vine-bud{
     fill:#fffaea; opacity:0; offset-distance:0%;
     filter:drop-shadow(0 0 6px #e9c869) drop-shadow(0 0 12px rgba(233,200,105,0.85)) drop-shadow(0 0 20px rgba(233,200,105,0.5));
@@ -451,19 +450,12 @@
   .vine-field.grow .vine-bud{opacity:1; offset-distance:100%;}
   .vine-field.grow .vine-bud.fade{opacity:0; transition:offset-distance 2s cubic-bezier(.25,.75,.2,1), opacity .6s ease 1.6s;}
 
-  .leaf-sway{
-    transform-box:fill-box; transform-origin:50% 100%;
-    animation:leafSway 4.4s ease-in-out infinite; animation-play-state:paused;
-  }
-  .vine-field.grow .leaf-sway{animation-play-state:running;}
-  @keyframes leafSway{0%,100%{transform:rotate(-4deg);} 50%{transform:rotate(5deg);}}
-
   .vine-leaf{
-    fill:#7c8468; stroke:#5c6448; stroke-width:0.6;
+    fill:#7c8468; stroke:#556149; stroke-width:0.9;
     opacity:0; transform:scale(.2) rotate(-30deg); transform-origin:50% 100%; transform-box:fill-box;
     transition:opacity .5s ease, transform .85s cubic-bezier(.34,1.56,.64,1);
   }
-  .vine-field.grow .vine-leaf{opacity:1; transform:scale(1) rotate(0deg);}
+  .vine-field.grow .vine-leaf{opacity:1; transform:scale(1.4) rotate(0deg);}
 
   /* ================= REVEAL ================= */
   .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
@@ -497,11 +489,11 @@
         <path class="vine-stem" d="M50,460 C25,410 60,375 38,325 C15,275 52,240 30,190 C12,150 46,120 34,75 C22,35 42,20 38,-5"/>
         <path class="vine-shine" d="M50,460 C25,410 60,375 38,325 C15,275 52,240 30,190 C12,150 46,120 34,75 C22,35 42,20 38,-5"/>
         <circle class="vine-bud outer fade" r="7"/>
-        <g class="leaf-sway" style="animation-delay:.2s"><path class="vine-leaf" style="transition-delay:.35s" d="M38,325 C63,320 78,335 81,355 C58,353 41,343 38,325 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:.6s"><path class="vine-leaf" style="transition-delay:.45s" d="M38,325 C15,317 1,327 -3,345 C19,348 36,341 38,325 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:1s"><path class="vine-leaf" style="transition-delay:.95s" d="M30,190 C6,182 -10,195 -14,215 C10,216 28,208 30,190 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:1.4s"><path class="vine-leaf" style="transition-delay:1.15s" d="M34,75 C52,68 66,76 70,92 C50,94 36,90 34,75 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:1.8s"><path class="vine-leaf" style="transition-delay:1.55s" d="M38,-5 C58,-11 71,-2 74,14 C54,17 40,10 38,-5 Z"/></g>
+        <path class="vine-leaf" style="transition-delay:.35s" d="M38,325 C63,320 78,335 81,355 C58,353 41,343 38,325 Z"/>
+        <path class="vine-leaf" style="transition-delay:.45s" d="M38,325 C15,317 1,327 -3,345 C19,348 36,341 38,325 Z"/>
+        <path class="vine-leaf" style="transition-delay:.95s" d="M30,190 C6,182 -10,195 -14,215 C10,216 28,208 30,190 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.15s" d="M34,75 C52,68 66,76 70,92 C50,94 36,90 34,75 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.55s" d="M38,-5 C58,-11 71,-2 74,14 C54,17 40,10 38,-5 Z"/>
       </svg>
     </div>
     <div class="vine-field left inner" aria-hidden="true">
@@ -509,9 +501,9 @@
         <path class="vine-stem" d="M35,340 C50,300 15,275 38,235 C58,200 15,170 36,125 C52,90 22,60 34,15"/>
         <path class="vine-shine" d="M35,340 C50,300 15,275 38,235 C58,200 15,170 36,125 C52,90 22,60 34,15"/>
         <circle class="vine-bud inner fade" r="5.5"/>
-        <g class="leaf-sway" style="animation-delay:.3s"><path class="vine-leaf" style="transition-delay:.5s" d="M38,235 C58,228 70,240 73,257 C53,256 40,248 38,235 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:.8s"><path class="vine-leaf" style="transition-delay:1s" d="M36,125 C14,118 0,129 -4,146 C17,148 33,141 36,125 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:1.3s"><path class="vine-leaf" style="transition-delay:1.3s" d="M38,235 C18,229 5,238 2,254 C22,257 37,249 38,235 Z"/></g>
+        <path class="vine-leaf" style="transition-delay:.5s" d="M38,235 C58,228 70,240 73,257 C53,256 40,248 38,235 Z"/>
+        <path class="vine-leaf" style="transition-delay:1s" d="M36,125 C14,118 0,129 -4,146 C17,148 33,141 36,125 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.3s" d="M38,235 C18,229 5,238 2,254 C22,257 37,249 38,235 Z"/>
       </svg>
     </div>
     <div class="vine-field right inner" aria-hidden="true">
@@ -519,9 +511,9 @@
         <path class="vine-stem" d="M35,340 C50,300 15,275 38,235 C58,200 15,170 36,125 C52,90 22,60 34,15"/>
         <path class="vine-shine" d="M35,340 C50,300 15,275 38,235 C58,200 15,170 36,125 C52,90 22,60 34,15"/>
         <circle class="vine-bud inner fade" r="5.5"/>
-        <g class="leaf-sway" style="animation-delay:.45s"><path class="vine-leaf" style="transition-delay:.65s" d="M38,235 C58,228 70,240 73,257 C53,256 40,248 38,235 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:.95s"><path class="vine-leaf" style="transition-delay:1.15s" d="M36,125 C14,118 0,129 -4,146 C17,148 33,141 36,125 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:1.45s"><path class="vine-leaf" style="transition-delay:1.45s" d="M38,235 C18,229 5,238 2,254 C22,257 37,249 38,235 Z"/></g>
+        <path class="vine-leaf" style="transition-delay:.65s" d="M38,235 C58,228 70,240 73,257 C53,256 40,248 38,235 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.15s" d="M36,125 C14,118 0,129 -4,146 C17,148 33,141 36,125 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.45s" d="M38,235 C18,229 5,238 2,254 C22,257 37,249 38,235 Z"/>
       </svg>
     </div>
     <div class="vine-field right outer" aria-hidden="true">
@@ -529,11 +521,11 @@
         <path class="vine-stem" d="M50,460 C25,410 60,375 38,325 C15,275 52,240 30,190 C12,150 46,120 34,75 C22,35 42,20 38,-5"/>
         <path class="vine-shine" d="M50,460 C25,410 60,375 38,325 C15,275 52,240 30,190 C12,150 46,120 34,75 C22,35 42,20 38,-5"/>
         <circle class="vine-bud outer fade" r="7"/>
-        <g class="leaf-sway" style="animation-delay:.25s"><path class="vine-leaf" style="transition-delay:.4s" d="M38,325 C63,320 78,335 81,355 C58,353 41,343 38,325 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:.65s"><path class="vine-leaf" style="transition-delay:.5s" d="M38,325 C15,317 1,327 -3,345 C19,348 36,341 38,325 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:1.05s"><path class="vine-leaf" style="transition-delay:1.05s" d="M30,190 C6,182 -10,195 -14,215 C10,216 28,208 30,190 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:1.45s"><path class="vine-leaf" style="transition-delay:1.25s" d="M34,75 C52,68 66,76 70,92 C50,94 36,90 34,75 Z"/></g>
-        <g class="leaf-sway" style="animation-delay:1.85s"><path class="vine-leaf" style="transition-delay:1.65s" d="M38,-5 C58,-11 71,-2 74,14 C54,17 40,10 38,-5 Z"/></g>
+        <path class="vine-leaf" style="transition-delay:.4s" d="M38,325 C63,320 78,335 81,355 C58,353 41,343 38,325 Z"/>
+        <path class="vine-leaf" style="transition-delay:.5s" d="M38,325 C15,317 1,327 -3,345 C19,348 36,341 38,325 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.05s" d="M30,190 C6,182 -10,195 -14,215 C10,216 28,208 30,190 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.25s" d="M34,75 C52,68 66,76 70,92 C50,94 36,90 34,75 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.65s" d="M38,-5 C58,-11 71,-2 74,14 C54,17 40,10 38,-5 Z"/>
       </svg>
     </div>
     <div class="hero-inner">
@@ -543,7 +535,7 @@
       <div class="eyebrow center">Mel Carter Photography</div>
       <h1>Photographed with a <em>gentle</em> hand and a sharp eye.</h1>
       <p class="lead">Weddings, portraits, headshots, and the four-legged family members who never sit still — all photographed the same careful way.</p>
-      <p class="sign">Based on location &amp; available for travel.</p>
+      <p class="sign">Based near Peachtree City, GA — serving Newnan, Griffin, Fayetteville &amp; Senoia.</p>
       <div class="hero-ctas">
         <a href="#/photography" class="btn btn-primary">View photography</a>
         <a href="#/videography" class="btn btn-ghost">View films</a>
@@ -565,25 +557,25 @@
     </div>
     <div class="grid4">
       <div class="service-card reveal" style="--d:0">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="26" height="26">
+        <span class="ic icon-mount" data-icon="rings" data-size="26"></span>
         <h3>Weddings &amp; Couples</h3>
         <p>Full-day coverage or an intimate elopement, shot to feel like the day rather than a performance of it.</p>
         <a href="#/photography" class="go">Explore <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="service-card reveal" style="--d:1">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="26" height="26">
+        <span class="ic icon-mount" data-icon="headshot" data-size="26"></span>
         <h3>Portraits &amp; Headshots</h3>
         <p>Personal branding, professional headshots, and lifestyle portraits that still look like you on a good day.</p>
         <a href="#/photography" class="go">Explore <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="service-card reveal" style="--d:2">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="26" height="26">
+        <span class="ic icon-mount" data-icon="paw" data-size="26"></span>
         <h3>Pet Photography</h3>
         <p>Patient, treat-bribed sessions built around your animal's actual personality, not a forced sit-and-stay.</p>
         <a href="#/photography" class="go">Explore <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="service-card reveal" style="--d:3">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="26" height="26">
+        <span class="ic icon-mount" data-icon="film" data-size="26"></span>
         <h3>Film &amp; Motion</h3>
         <p>Wedding films, engagement stories, and short lifestyle reels that move the way the day actually did.</p>
         <a href="#/videography" class="go">Explore <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -618,6 +610,26 @@
 <!-- ================= PHOTOGRAPHY ================= -->
 <main id="page-/photography" class="page">
   <section class="service-hero">
+    <div class="vine-field small left" aria-hidden="true">
+      <svg viewBox="0 0 160 300">
+        <path class="vine-stem" d="M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5"/>
+        <path class="vine-shine" d="M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5"/>
+        <circle class="vine-bud small fade" r="6" offset-path="path('M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5')" fill="#fffaea" opacity="0" style="filter:drop-shadow(0 0 6px #e9c869) drop-shadow(0 0 12px rgba(233,200,105,.85)); transition:offset-distance 1.7s cubic-bezier(.25,.75,.2,1), opacity .3s ease .05s;"/>
+        <path class="vine-leaf" style="transition-delay:.3s" d="M36,185 C58,179 71,190 74,206 C55,205 40,197 36,185 Z"/>
+        <path class="vine-leaf" style="transition-delay:.7s" d="M34,75 C10,68 -5,80 -8,98 C13,100 30,92 34,75 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.05s" d="M36,185 C14,178 1,187 -3,203 C17,206 33,199 36,185 Z"/>
+      </svg>
+    </div>
+    <div class="vine-field small right" aria-hidden="true">
+      <svg viewBox="0 0 160 300">
+        <path class="vine-stem" d="M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5"/>
+        <path class="vine-shine" d="M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5"/>
+        <circle class="vine-bud small fade" r="6" offset-path="path('M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5')" fill="#fffaea" opacity="0" style="filter:drop-shadow(0 0 6px #e9c869) drop-shadow(0 0 12px rgba(233,200,105,.85)); transition:offset-distance 1.7s cubic-bezier(.25,.75,.2,1), opacity .3s ease .05s;"/>
+        <path class="vine-leaf" style="transition-delay:.4s" d="M36,185 C58,179 71,190 74,206 C55,205 40,197 36,185 Z"/>
+        <path class="vine-leaf" style="transition-delay:.8s" d="M34,75 C10,68 -5,80 -8,98 C13,100 30,92 34,75 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.15s" d="M36,185 C14,178 1,187 -3,203 C17,206 33,199 36,185 Z"/>
+      </svg>
+    </div>
     <div class="service-hero-inner">
       <div class="eyebrow center">Still</div>
       <h1>Photography</h1>
@@ -640,22 +652,22 @@
   <section class="capabilities">
     <div class="cap-grid">
       <div class="cap-item">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="24" height="24">
+        <span class="ic icon-mount" data-icon="rings" data-size="24"></span>
         <h3>Weddings &amp; Couples</h3>
         <p>Engagements, elopements, and full wedding-day coverage, shot to feel like the day rather than a performance of it.</p>
       </div>
       <div class="cap-item">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="24" height="24">
+        <span class="ic icon-mount" data-icon="portrait" data-size="24"></span>
         <h3>Portraits &amp; Lifestyle</h3>
         <p>Individual, couple, and family portraits built around natural light and a genuinely relaxed pace.</p>
       </div>
       <div class="cap-item">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="24" height="24">
+        <span class="ic icon-mount" data-icon="headshot" data-size="24"></span>
         <h3>Headshots</h3>
         <p>Professional headshots for LinkedIn, teams, and personal branding — polished, but still recognizably you.</p>
       </div>
       <div class="cap-item">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="24" height="24">
+        <span class="ic icon-mount" data-icon="paw" data-size="24"></span>
         <h3>Pet Photography</h3>
         <p>On-location sessions built around your animal's energy, from zoomies to naps, treats always included.</p>
       </div>
@@ -665,7 +677,12 @@
   <section class="icon-band">
     <div class="icon-frame">
       <span class="cbl"></span><span class="cbr"></span>
-      <img class="brand-mark" src="images/mel-logo.svg" alt="" width="150" height="150">
+      <svg class="camera-icon" viewBox="0 0 100 100" fill="none">
+        <path d="M38 30l4-8h16l4 8h14a4 4 0 0 1 4 4v34a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V34a4 4 0 0 1 4-4h18Z" stroke="var(--gold)" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="50" cy="52" r="15" stroke="var(--gold)" stroke-width="2"/>
+        <circle cx="50" cy="52" r="6.5" fill="var(--gold)"/>
+        <circle class="rec-dot" cx="72" cy="32" r="3.2" fill="var(--gold)"/>
+      </svg>
     </div>
   </section>
 
@@ -715,6 +732,26 @@
 <!-- ================= VIDEOGRAPHY ================= -->
 <main id="page-/videography" class="page">
   <section class="service-hero">
+    <div class="vine-field small left" aria-hidden="true">
+      <svg viewBox="0 0 160 300">
+        <path class="vine-stem" d="M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5"/>
+        <path class="vine-shine" d="M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5"/>
+        <circle class="vine-bud small fade" r="6" offset-path="path('M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5')" fill="#fffaea" opacity="0" style="filter:drop-shadow(0 0 6px #e9c869) drop-shadow(0 0 12px rgba(233,200,105,.85)); transition:offset-distance 1.7s cubic-bezier(.25,.75,.2,1), opacity .3s ease .05s;"/>
+        <path class="vine-leaf" style="transition-delay:.3s" d="M36,185 C58,179 71,190 74,206 C55,205 40,197 36,185 Z"/>
+        <path class="vine-leaf" style="transition-delay:.7s" d="M34,75 C10,68 -5,80 -8,98 C13,100 30,92 34,75 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.05s" d="M36,185 C14,178 1,187 -3,203 C17,206 33,199 36,185 Z"/>
+      </svg>
+    </div>
+    <div class="vine-field small right" aria-hidden="true">
+      <svg viewBox="0 0 160 300">
+        <path class="vine-stem" d="M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5"/>
+        <path class="vine-shine" d="M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5"/>
+        <circle class="vine-bud small fade" r="6" offset-path="path('M50,300 C25,260 58,225 36,185 C15,148 48,115 34,75 C22,42 42,25 38,-5')" fill="#fffaea" opacity="0" style="filter:drop-shadow(0 0 6px #e9c869) drop-shadow(0 0 12px rgba(233,200,105,.85)); transition:offset-distance 1.7s cubic-bezier(.25,.75,.2,1), opacity .3s ease .05s;"/>
+        <path class="vine-leaf" style="transition-delay:.4s" d="M36,185 C58,179 71,190 74,206 C55,205 40,197 36,185 Z"/>
+        <path class="vine-leaf" style="transition-delay:.8s" d="M34,75 C10,68 -5,80 -8,98 C13,100 30,92 34,75 Z"/>
+        <path class="vine-leaf" style="transition-delay:1.15s" d="M36,185 C14,178 1,187 -3,203 C17,206 33,199 36,185 Z"/>
+      </svg>
+    </div>
     <div class="service-hero-inner">
       <div class="eyebrow center">Motion</div>
       <h1>Videography</h1>
@@ -737,22 +774,22 @@
   <section class="capabilities">
     <div class="cap-grid">
       <div class="cap-item">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="24" height="24">
+        <span class="ic icon-mount" data-icon="rings" data-size="24"></span>
         <h3>Wedding &amp; Elopement Films</h3>
         <p>A cinematic recap of the day, from getting-ready quiet to the last dance, cut to how it actually felt.</p>
       </div>
       <div class="cap-item">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="24" height="24">
+        <span class="ic icon-mount" data-icon="heart" data-size="24"></span>
         <h3>Couples &amp; Engagement Films</h3>
         <p>Short, story-led films that capture how two people actually are together, not a staged version of it.</p>
       </div>
       <div class="cap-item">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="24" height="24">
+        <span class="ic icon-mount" data-icon="film" data-size="24"></span>
         <h3>Brand &amp; Lifestyle Reels</h3>
         <p>Short-form video for personal brands and small businesses, shot to match your existing photography.</p>
       </div>
       <div class="cap-item">
-        <img class="ic brand-mark round" src="images/mel-logo.svg" alt="" width="24" height="24">
+        <span class="ic icon-mount" data-icon="paw" data-size="24"></span>
         <h3>Pets in Motion</h3>
         <p>Slow-motion zoomies, first swims, and quiet naps — the moments a still photo can't quite hold.</p>
       </div>
@@ -873,7 +910,7 @@
       </div>
       <div class="row">
         <span class="label">Based in</span>
-        <span class="val">Available for local &amp; travel bookings</span>
+        <span class="val">Peachtree City, Newnan, Griffin, Fayetteville &amp; Senoia, GA</span>
       </div>
       <div class="row">
         <span class="label">Turnaround</span>
@@ -922,7 +959,7 @@
   <div class="footer-inner">
     <div style="max-width:260px;">
       <div class="footer-brand"><img class="brand-mark round" src="images/mel-logo.svg" alt="" width="26" height="26"> Mel Carter Photography</div>
-      <p style="color:var(--muted-inv); margin:0;">Weddings, portraits, headshots, and pet photography, all photographed the same careful way.</p>
+      <p style="color:var(--muted-inv); margin:0;">Weddings, portraits, headshots, and pet photography for Peachtree City, Newnan, Griffin, Fayetteville &amp; Senoia, GA.</p>
     </div>
     <div class="footer-col">
       <h4>Sessions</h4>
@@ -943,6 +980,23 @@
 </footer>
 
 <script>
+  // ---------- small named icons (service cards / capability grids) ----------
+  const iconLibrary = {
+    rings: '<circle cx="9" cy="14.5" r="6" stroke="var(--gold)" stroke-width="1.6"/><circle cx="15" cy="14.5" r="6" stroke="var(--gold)" stroke-width="1.6"/>',
+    heart: '<path d="M12 20.3s-7.3-4.5-9.4-8.9C1 7.9 2.6 4.8 5.7 4.2c2-.4 3.8.5 4.9 2 1.1-1.5 2.9-2.4 4.9-2 3.1.6 4.7 3.7 3.2 7.2-2.1 4.4-9.4 8.9-9.4 8.9Z" stroke="var(--gold)" stroke-width="1.5" stroke-linejoin="round"/>',
+    portrait: '<rect x="3" y="4.5" width="18" height="15" rx="2" stroke="var(--gold)" stroke-width="1.6"/><circle cx="9" cy="10" r="2" stroke="var(--gold)" stroke-width="1.4"/><path d="M4.5 16.5l4.5-4.5 3.5 3.5 3-3 4 4" stroke="var(--gold)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>',
+    headshot: '<circle cx="12" cy="8" r="4" stroke="var(--gold)" stroke-width="1.6"/><path d="M4.5 20.5c0-4.1 3.4-6.5 7.5-6.5s7.5 2.4 7.5 6.5" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/>',
+    paw: '<ellipse cx="12" cy="16.2" rx="5" ry="4" stroke="var(--gold)" stroke-width="1.5"/><ellipse cx="5.8" cy="9.3" rx="2" ry="2.6" stroke="var(--gold)" stroke-width="1.5"/><ellipse cx="10.8" cy="6" rx="2" ry="2.6" stroke="var(--gold)" stroke-width="1.5"/><ellipse cx="16" cy="6.4" rx="2" ry="2.6" stroke="var(--gold)" stroke-width="1.5"/><ellipse cx="19.4" cy="10.3" rx="2" ry="2.6" stroke="var(--gold)" stroke-width="1.5"/>',
+    film: '<circle cx="12" cy="12" r="9" stroke="var(--gold)" stroke-width="1.6"/><circle cx="12" cy="12" r="2.1" stroke="var(--gold)" stroke-width="1.4"/><circle cx="12" cy="5.3" r="1.3" stroke="var(--gold)" stroke-width="1.2"/><circle cx="12" cy="18.7" r="1.3" stroke="var(--gold)" stroke-width="1.2"/><circle cx="5.7" cy="8.7" r="1.3" stroke="var(--gold)" stroke-width="1.2"/><circle cx="18.3" cy="8.7" r="1.3" stroke="var(--gold)" stroke-width="1.2"/><circle cx="5.7" cy="15.3" r="1.3" stroke="var(--gold)" stroke-width="1.2"/><circle cx="18.3" cy="15.3" r="1.3" stroke="var(--gold)" stroke-width="1.2"/>'
+  };
+  document.querySelectorAll('.icon-mount').forEach(el => {
+    const name = el.getAttribute('data-icon');
+    const size = el.getAttribute('data-size') || 24;
+    const inner = iconLibrary[name];
+    if(!inner) return;
+    el.innerHTML = '<svg viewBox="0 0 24 24" fill="none" width="' + size + '" height="' + size + '" aria-hidden="true">' + inner + '</svg>';
+  });
+
   // ---------- routing ----------
   const pages = Array.from(document.querySelectorAll('.page'));
   const navLinks = Array.from(document.querySelectorAll('nav.nav-links a, .brand'));
@@ -957,8 +1011,8 @@
   }
 
   // ---------- growing vines ----------
-  function primeVines(){
-    vineFields.forEach(field => {
+  function primeVines(fields){
+    (fields || vineFields).forEach(field => {
       field.classList.remove('grow');
       const stem = field.querySelector('.vine-stem');
       const shine = field.querySelector('.vine-shine');
@@ -967,59 +1021,31 @@
       stem.style.strokeDasharray = len;
       stem.style.strokeDashoffset = len;
       if(shine){
-        const dash = Math.max(18, len * 0.05);
-        shine.style.strokeDasharray = dash + ' ' + (len * 3);
-        shine.style.setProperty('--shine-run', (-(len * 3)) + 'px');
+        shine.style.strokeDasharray = len;
+        shine.style.strokeDashoffset = len;
       }
     });
   }
 
-  function growVines(){
-    vineFields.forEach((field, i) => {
+  function growVines(fields){
+    (fields || vineFields).forEach((field, i) => {
       setTimeout(() => {
         const stem = field.querySelector('.vine-stem');
+        const shine = field.querySelector('.vine-shine');
         if(stem) stem.style.strokeDashoffset = '0';
+        if(shine) shine.style.strokeDashoffset = '0';
         field.classList.add('grow');
       }, i * 180);
     });
   }
   if(vineFields.length) primeVines();
 
-  // ---------- whole-vine root sway: ambient breeze + mouse-driven wind ----------
-  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const vinesVisibleQuery = window.matchMedia ? window.matchMedia('(min-width:981px)') : null;
-  if(vineFields.length && !reduceMotion && vinesVisibleQuery){
-    let mouseTilt = 0;
-    let swaying = false;
-    document.addEventListener('pointermove', (e) => {
-      const mid = window.innerWidth / 2;
-      mouseTilt = Math.max(-1, Math.min(1, (e.clientX - mid) / mid)) * 2.6;
-    });
-    function swayLoop(t){
-      if(!swaying) return;
-      vineFields.forEach((field, i) => {
-        const ambient = Math.sin(t / 1900 + i * 1.7) * 2.3;
-        field.style.setProperty('--tilt', (ambient + mouseTilt).toFixed(2) + 'deg');
-      });
-      requestAnimationFrame(swayLoop);
-    }
-    function startSway(){
-      if(swaying || document.hidden || !vinesVisibleQuery.matches) return;
-      swaying = true;
-      requestAnimationFrame(swayLoop);
-    }
-    function stopSway(){ swaying = false; }
-    vinesVisibleQuery.addEventListener ? vinesVisibleQuery.addEventListener('change', (e) => e.matches ? startSway() : stopSway())
-      : vinesVisibleQuery.addListener((e) => e.matches ? startSway() : stopSway());
-    document.addEventListener('visibilitychange', () => document.hidden ? stopSway() : startSway());
-    startSway();
-  }
-
   function showPage(path){
     pauseAllVideos();
     if(!document.getElementById('page-'+path)){ path = '/'; }
     pages.forEach(p => p.classList.remove('visible'));
-    document.getElementById('page-'+path).classList.add('visible');
+    const activePage = document.getElementById('page-'+path);
+    activePage.classList.add('visible');
     navLinks.forEach(a => a.classList.toggle('active', a.dataset.route === path));
     window.scrollTo(0, 0);
 
@@ -1027,9 +1053,12 @@
       heroMarkStage.classList.remove('play');
       void heroMarkStage.offsetWidth;
       requestAnimationFrame(() => heroMarkStage.classList.add('play'));
-      primeVines();
-      void document.getElementById('heroSection').offsetWidth;
-      requestAnimationFrame(growVines);
+    }
+    const pageVines = activePage.querySelectorAll('.vine-field');
+    if(pageVines.length){
+      primeVines(pageVines);
+      void activePage.offsetWidth;
+      requestAnimationFrame(() => growVines(pageVines));
     }
     document.getElementById('navLinks').classList.remove('open');
     runReveal();
